@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+   <body>
+      <table border="1">
+         <thead>
+            <td>Name</td>
+            <td>Age</td>
+            <td>City</td>
+            <td>Course</td>
+         </thead>
+         
+         {% for row in rows %}
+         {% set nm=row["name"] %}
+         {{nm}}
+            <tr>
+               <td>{{row["name"]}}</td>
+               <td>{{row["age"]}}</td>
+               <td> {{ row["city"]}}</td>
+               <td>{{row['course']}}</td>
+               <td><button type="button" href="http://localhost:5000/delete+{{nm}}">Delete</button></td>
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>
